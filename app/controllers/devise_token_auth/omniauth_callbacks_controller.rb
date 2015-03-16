@@ -153,10 +153,10 @@ module DeviseTokenAuth
     end
 
     def generate_url(url, params = {})
-      auth_url = url
+      auth_url = url || ''
 
       # ensure that hash-bang is present BEFORE querystring for angularjs
-      unless url.match(/#/)
+      unless auth_url.match(/#/)
         auth_url += '#'
       end
 
